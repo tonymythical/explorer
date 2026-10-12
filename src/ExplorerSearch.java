@@ -32,6 +32,17 @@ public class ExplorerSearch {
         // Implement your method here!
         // Please also make more test cases
         // I STRONGLY RECOMMEND testing some helpers you might make too
+        if (island == null || island.length == 0 || island[0].length == 0) {
+            return 0;
+        }
+
+        int rows = island.length;
+        int cols = island[0].length;
+        boolean[][] visited = new boolean[rows][cols];
+
+        int startRow = -1;
+        int startCol = -1;
+        
         return -1;
     }
 }
