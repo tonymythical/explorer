@@ -77,11 +77,16 @@ public class ExplorerSearch {
             for (int i = 0; i < 4; i++) {
                 int nextRow = curr[0] + dRow[i];
                 int nextCol = curr[1] + dCol[i];
+
+                if (nextRow >= 0 && nextRow < rows && nextCol >= 0 && nextCol < cols) {
+                    if (!visited[nextRow][nextCol] && island[nextRow][nextCol] != 2 && island[nextRow][nextCol] != 3) {
+                        visited[nextRow][nextCol] = true;
+                        queue.add(new int[]{nextRow, nextCol});
+                    }
+                }
             }
         }
 
-
-
-        return -1;
+        return reachableCount;
     }
 }
