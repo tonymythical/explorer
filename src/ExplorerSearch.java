@@ -42,7 +42,22 @@ public class ExplorerSearch {
 
         int startRow = -1;
         int startCol = -1;
+
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                if (island[r][c] == 0) {
+                    startRow = r;
+                    startCol = c;
+                    break;
+                }
+            }
+            if (startRow != -1) {
+                break;
+            }
+        }
+
         
+
         return -1;
     }
 }
