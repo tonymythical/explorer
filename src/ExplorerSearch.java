@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class ExplorerSearch {
 
@@ -56,7 +58,29 @@ public class ExplorerSearch {
             }
         }
 
-        
+        if (startRow == -1) {
+            return 0;
+        }
+
+        Queue<int[]> queue = new LinkedList<>();
+        queue.add(new int[]{startRow, startCol});
+        visited[startRow][startCol] = true;
+
+        int reachableCount = 0;
+        int[] dRow = {-1, 1, 0, 0};
+        int[] dCol = {0, 0, -1, 1};
+
+        while (!queue.isEmpty()) {
+            int[] curr = queue.poll();
+            reachableCount++;
+
+            for (int i = 0; i < 4; i++) {
+                int nextRow = curr[0] + dRow[i];
+                int nextCol = curr[1] + dCol[i];
+            }
+        }
+
+
 
         return -1;
     }
